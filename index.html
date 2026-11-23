@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Life Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+  <!-- Top Header -->
+  <header class="header">
+    <h1>Personal Life Dashboard</h1>
+    <p>Tasks | Focus Timer | Habits | Finance | Health</p>
+    <div class="summary-bar">
+      <span>Tasks Done: <strong id="total-tasks">0/0</strong></span> |
+      <span>Balance: <strong id="total-balance">₹0</strong></span> |
+      <span>Calories: <strong id="total-calories">0 kcal</strong></span>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    <!-- 1. Task Manager -->
+    <section class="box">
+      <h2>1. Task Manager</h2>
+      <form id="task-form">
+        <input type="text" id="task-input" placeholder="Enter task..." required>
+        <select id="task-category">
+          <option value="College">College</option>
+          <option value="Career">Career</option>
+          <option value="Personal">Personal</option>
+        </select>
+        <input type="text" id="task-time" placeholder="Time (e.g. 5 PM)">
+        <button type="submit">Add Task</button>
+      </form>
+      <ul id="task-list"></ul>
+    </section>
+
+    <!-- 2. Focus Timer (Pomodoro) -->
+    <section class="box center-text">
+      <h2>2. Focus Timer</h2>
+      <p class="quote">"Stay focused and keep going."</p>
+      <div id="timer-display" class="timer">25:00</div>
+      <div class="btn-group">
+        <button id="start-btn">Start</button>
+        <button id="pause-btn">Pause</button>
+        <button id="reset-btn">Reset</button>
+      </div>
+    </section>
+
+    <!-- 3. Daily Habit Tracker -->
+    <section class="box">
+      <h2>3. Habit Tracker</h2>
+      <form id="habit-form">
+        <input type="text" id="habit-input" placeholder="New habit..." required>
+        <button type="submit">Add</button>
+      </form>
+      <ul id="habit-list"></ul>
+    </section>
+
+    <!-- 4. Personal Finance -->
+    <section class="box">
+      <h2>4. Income & Expense</h2>
+      <p class="small-text">Monthly Budget Limit: ₹5000</p>
+      <form id="finance-form">
+        <input type="text" id="fin-desc" placeholder="Item / Source" required>
+        <input type="number" id="fin-amount" placeholder="Amount (₹)" required>
+        <select id="fin-type">
+          <option value="expense">Expense</option>
+          <option value="income">Income</option>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+      <ul id="finance-list"></ul>
+    </section>
+
+    <!-- 5. Health & Mood -->
+    <section class="box">
+      <h2>5. Health & Mood</h2>
+      <div class="mood-box">
+        <label for="mood-input">Today's Mood (1-9): </label>
+        <input type="number" id="mood-input" min="1" max="9" value="7">
+      </div>
+      <form id="health-form">
+        <input type="text" id="meal-input" placeholder="Meal or Workout" required>
+        <input type="number" id="cal-input" placeholder="Calories (kcal)" required>
+        <button type="submit">Log</button>
+      </form>
+      <ul id="health-list"></ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
